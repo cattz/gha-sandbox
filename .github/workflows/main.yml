@@ -39,3 +39,16 @@ jobs:
           echo Repo status
           git status
           git branch -a
+      # Upload artifact
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          # Artifact name
+          name: my-artifact # optional, default is artifact
+          # A file, directory or wildcard pattern that describes what to upload
+          path: README.md
+          # The desired behavior if no files are found using the provided path.
+          if-no-files-found: warn # optional, default is warn
+          # Duration after which artifact will expire in days. 0 means using default retention.
+          retention-days: 1day # optional          
+      
