@@ -51,4 +51,10 @@ jobs:
           if-no-files-found: warn # optional, default is warn
           # Duration after which artifact will expire in days. 0 means using default retention.
           retention-days: 1day # optional          
-      
+  another_job:
+    name: Friendly name for another job
+    runs-on: ubutu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Explore secrets
+        run: echo This is my secret ${{ secrets.XAB_SECRET }}
